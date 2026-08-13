@@ -1,7 +1,7 @@
 
 
 import { checkoutUser } from '../../test-data/checkoutData';
-import { test, expect } from '../fixtures/baseTest';
+import { test, expect } from '../../fixtures/baseTest';
 
 
 test('User can open cart', async ({ inventoryPage, cartPage }) => {
