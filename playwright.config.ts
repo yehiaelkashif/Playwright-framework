@@ -25,15 +25,15 @@ export default defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 use: {
- // 'https://backoffice-uat.takkaapp.com/adi-microfinances/login'
- baseURL: process.env.BASE_URL,
-  headless: false,
+    baseURL: process.env.BASE_URL,
 
-  screenshot: 'only-on-failure',
+    headless: !!process.env.CI,
 
-  video: 'retain-on-failure',
+    screenshot: 'only-on-failure',
 
-  trace: 'on-first-retry',
+    video: 'retain-on-failure',
+
+    trace: 'on-first-retry',
 },
 
   /* Configure projects for major browsers */
