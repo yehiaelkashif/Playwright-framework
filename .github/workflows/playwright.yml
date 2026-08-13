@@ -2,16 +2,23 @@ name: Playwright Tests
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   test:
+    runs-on: ubuntu-latest
+
     timeout-minutes: 60
 
-    runs-on: ubuntu-latest
+    env:
+      BASE_URL: ${{ secrets.BASE_URL }}
+      STANDARD_USER: ${{ secrets.STANDARD_USER }}
+      STANDARD_PASSWORD: ${{ secrets.STANDARD_PASSWORD }}
 
     steps:
       - name: Checkout repository
